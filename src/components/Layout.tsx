@@ -36,13 +36,6 @@ const Layout = (props: LayoutProps) => {
     { icon: <Appeal />, label: "Appeal Letter", path: "/appeal" },
     { icon: <Summary />, label: "Summary", path: "/summary" },
   ];
-  // useEffect(() => {
-  //   if (width <= 758) {
-  //     setIsSidebarOpen(false); 
-  //   } else {
-  //     setIsSidebarOpen(true); 
-  //   }
-  // }, [width]);
   useEffect(() => {
     if (width <= 758) {
       setIsSidebarOpen(false); // hidden on mobile
@@ -62,65 +55,7 @@ const Layout = (props: LayoutProps) => {
     }
   };
   return (
-    // <div
-    //   className={` ${isSidebarOpen ? "sidebar" : "hide-sidebar"}`}
-    // >
-    //   <div
-    //     className="d-md-none d-flex justify-content-end"
-    //     onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-    //   >
-    //     {isSidebarOpen ? (
-    //       <IoIosArrowDropupCircle className="text-white fs-1" />
-    //     ) : (
-    //       <IoIosArrowDropdownCircle className="text-white fs-1" />
-    //     )}
-    //   </div>
 
-    //   {isSidebarOpen && (
-    //     <>
-    //       <div className="d-none d-md-flex justify-content-end">
-    //         <button
-    //           className="text-white bg-transparent border-0  px-0 toggleButton"
-    //           onClick={() => props.setIsExpanded(!props.isExpanded)}
-    //           aria-label="Toggle sidebar"
-    //         >
-    //           <CircleArrow />
-    //         </button>
-    //       </div>
-    //       <ul className="list-unstyled">
-    //         {menuItems.map((item, index) => (
-    //           <li key={index}>
-    //             <div className="d-flex flex-row column-gap-2">
-    //               {item.icon}
-    //               {((props.isExpanded && isSidebarOpen)|| (!props.isExpanded && !isSidebarOpen) ) && (
-    //                 <p className="leftText">{item.label}</p>
-    //               )}
-    //             </div>
-    //           </li>
-    //         ))}
-    //       </ul>
-    //       <div className="mb-3 mt-5">
-    //         <div className="d-flex flex-row column-gap-2 ps-3">
-    //           <Settings />
-    //           {(props.isExpanded || isSidebarOpen) && (
-    //             <p className="leftText">Settings</p>
-    //           )}
-    //         </div>
-    //         <div className="text-center mt-2">
-    //           <Button
-    //             variant="success"
-    //             className="w-100 rounded-3 pb-2 d-flex justify-content-center align-items-center gap-2"
-    //           >
-    //             <Logout />
-    //             {(props.isExpanded || isSidebarOpen) && (
-    //               <span className="leftText">Logout</span>
-    //             )}
-    //           </Button>
-    //         </div>
-    //       </div>
-    //     </>
-    //   )}
-    // </div>
     <div className={`sidebar-container ${isSidebarOpen ? "sidebar" : "hide-sidebar"}`}>
       {/* Mobile toggle icon */}
       <div className="d-md-none d-flex justify-content-end" onClick={handleToggleSidebar}>
